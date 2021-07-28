@@ -2,6 +2,7 @@ const grid = document.querySelector('.grid')
 const startButton = document.querySelector('#start')
 const score = document.querySelector('#score')
 let cells = []
+let currentSnake = [0,1,2]
 
 function createGrid() {
 
@@ -14,3 +15,5 @@ function createGrid() {
 }
 
 createGrid()
+
+currentSnake.forEach(index => cells[index].classList.add('snake'))

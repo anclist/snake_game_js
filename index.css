@@ -20,3 +20,7 @@ html, body {
     width: calc(var(--grid-width) / 10);
     height: calc(var(--grid-height) / 10);
 }
+
+.snake {
+    background: green;
+}
