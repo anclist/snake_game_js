@@ -1,0 +1,19 @@
+html, body {
+    margin: 10;
+    padding: 10;
+    text-align: center;
+    --grid-width: 200px;
+    --grid-height: 200px;
+}
+
+.grid {
+    width: var(--grid-width);
+    height: var(--grid-height);
+    border: solid 2px black;
+    margin: 0 auto;
+}
+
+.grid div {
+    width: calc(var(--grid-width) / 10);
+    height: calc(var(--grid-height) / 10);
+}
