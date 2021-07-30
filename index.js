@@ -4,6 +4,7 @@ const score = document.querySelector('#score')
 let cells = []
 let currentSnake = [2,1,0]
 let direction = 1
+let width = 10
 
 function createGrid() {
 
@@ -24,7 +25,22 @@ function move() {
     const tail = currentSnake.pop()
     cells[tail].classList.remove('snake')
     const head = currentSnake.unshift(currentSnake[0] + direction)
-    cells[head].classList.add('snake')
+    cells[currentSnake[0]].classList.add('snake')
 }
 
-move()
+
+let timerId = setInterval(move, 1000)
+
+function control(e) {
+    if (e.keyCode === 39) {
+        direction = 1
+    } else if (e.keyCode === 38) {
+        direction = -width
+    } else if (e.keyCode === 37) {
+        direction = -1
+    } else if (e.keyCode === 40) {
+        direction = +width
+    }
+}
+
+document.addEventListener('keyup', control)
