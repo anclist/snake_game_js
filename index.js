@@ -27,7 +27,8 @@ function move() {
         (currentSnake[0] + width >= 100 && direction === width) || //if snake hits the bottom border
         (currentSnake[0] % width === 9 && direction === 1) || //if the snake hits the right border
         (currentSnake[0] - width <= 0 && direction === -width) || //if the snake hits the top border
-        (currentSnake[0] % width === 0 && direction === -1) //if the snake hits the top border
+        (currentSnake[0] % width === 0 && direction === -1) ||
+        cells[currentSnake[0] + direction].classList.contains('snake') //if the snake hits the top border
     ) {
         return clearInterval(timerId)
     }
