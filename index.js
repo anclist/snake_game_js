@@ -22,10 +22,23 @@ currentSnake.forEach(index => cells[index].classList.add('snake'))
 
 
 function move() {
+
+    if (
+        (currentSnake[0] + width >= 100 && direction === width) || //if snake hits the bottom border
+        (currentSnake[0] % width === 9 && direction === 1) || //if the snake hits the right border
+        (currentSnake[0] - width <= 0 && direction === -width) || //if the snake hits the top border
+        (currentSnake[0] % width === 0 && direction === -1) //if the snake hits the top border
+    ) {
+        return clearInterval(timerId)
+    }
+
+        
+
     const tail = currentSnake.pop()
     cells[tail].classList.remove('snake')
     const head = currentSnake.unshift(currentSnake[0] + direction)
     cells[currentSnake[0]].classList.add('snake')
+
 }
 
 
@@ -43,4 +56,4 @@ function control(e) {
     }
 }
 
-document.addEventListener('keyup', control)
+document.addEventListener('keydown', control)
