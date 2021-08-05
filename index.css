@@ -23,4 +23,10 @@ html, body {
 
 .snake {
     background: green;
+    border-radius: 5px;
+}
+
+.apple {
+    background: url(images/apple_logo_black-svg.png);
+    background-size: cover;
 }
