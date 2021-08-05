@@ -7,6 +7,13 @@ html, body {
     box-sizing: border-box;
 }
 
+#start {
+    padding: 10px 15px;
+    border: none;
+    background: rgb(62, 26, 224);
+    color: white;
+}
+
 .grid {
     width: var(--grid-width);
     height: var(--grid-height);
