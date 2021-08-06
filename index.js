@@ -108,7 +108,7 @@ function control(e) {
 }
 
 upControl.addEventListener('touchstart', function() {
-    alert('Up Arrow touched')
+    window.alert('Up Arrow touched')
 })
 console.log(leftControl)
 console.log(downControl)
