@@ -107,7 +107,7 @@ function control(e) {
     }
 }
 
-upControl.addEventListener('touchstart', function{
+upControl.addEventListener('touchstart', function() {
     alert('Up Arrow touched')
 })
 console.log(leftControl)
