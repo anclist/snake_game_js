@@ -65,7 +65,6 @@ function move() {
     const tail = currentSnake.pop()
     cells[tail].classList.remove('snake')
     const head = currentSnake.unshift(currentSnake[0] + direction)
-    console.log(currentSnake)
     
     if (currentSnake[0] === appleIndex) {
         cells[appleIndex].classList.remove('apple')
@@ -108,11 +107,18 @@ function control(e) {
 }
 
 upControl.addEventListener('touchstart', function() {
-    window.alert('Up Arrow touched')
+    direction = -width
 })
-console.log(leftControl)
-console.log(downControl)
-console.log(rightControl)
+leftControl.addEventListener('touchstart', function() {
+    direction = -1
+})
+downControl.addEventListener('touchstart', function() {
+    direction = +width
+})
+rightControl.addEventListener('touchstart', function() {
+    direction = 1
+})
+
 
 document.addEventListener('keydown', control)
 startButton.addEventListener('click', startGame)
