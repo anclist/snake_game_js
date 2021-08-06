@@ -1,6 +1,13 @@
 const grid = document.querySelector('.grid')
 const startButton = document.querySelector('#start')
 const scoreDisplay = document.querySelector('#score')
+const upControl = document.querySelector('#up-control')
+const leftControl = document.querySelector('#left-control')
+const downControl = document.querySelector('#down-control')
+const rightControl = document.querySelector('#right-control')
+
+
+
 let cells = []
 let currentSnake = [2,1,0]
 let direction = 1
@@ -99,6 +106,13 @@ function control(e) {
         direction = +width
     }
 }
+
+upControl.addEventListener('touchstart', function{
+    alert('Up Arrow touched')
+})
+console.log(leftControl)
+console.log(downControl)
+console.log(rightControl)
 
 document.addEventListener('keydown', control)
 startButton.addEventListener('click', startGame)
